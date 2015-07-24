@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: g98_development
+  pool: 100
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: g98_test
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: g98_development
+  pool: 5
