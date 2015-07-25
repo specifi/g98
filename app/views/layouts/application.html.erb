@@ -15,7 +15,10 @@
       <ul class="sidebar-nav">
         <li><a href="#" class="text-center logo"><%= image_tag "g98-logo"%></a></li>
         <li></br></li>
-        <li><%= link_to content_tag(:i, ' Dashboard', class: "fa fa-dashboard"), authenticated_root_path, class: is_active?("dashboard") %></li>
+        <li><%= link_to content_tag(:i, ' Hot', class: "fa fa-fire"), authenticated_root_path, class: is_active?("dashboard") %></li>
+        <li><%= link_to content_tag(:i, ' Trending', class: "fa fa-star") %></li>
+        <li><%= link_to content_tag(:i, ' Fresh', class: "fa fa-female") %></li>
+        <li><%= link_to content_tag(:i, ' Upload', class: "fa fa-camera") %></li>
         <li><%= link_to content_tag(:i, ' Logout', class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
 
       </ul>
