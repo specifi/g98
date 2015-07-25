@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>G98</title>
+  <title>Specifi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'sidebar' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li><a href="#" class="text-center logo"><%= image_tag "g98-logo"%></a></li>
+        <li></br></li>
+        <li><%= link_to content_tag(:i, ' Dashboard', class: "fa fa-dashboard"), authenticated_root_path, class: is_active?("dashboard") %></li>
+        <li><%= link_to content_tag(:i, ' Logout', class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
 
-<%= yield %>
+      </ul>
+    </div>
 
+
+    <div id="page-content-wrapper">
+      <div class="content-header">
+        <h1>
+          <a id="menu-toggle" href="#" class="btn btn-default"><%= fa_icon "navicon" %></a>
+          <%= yield(:title) %>
+        </h1>
+      </div>
+    </div>
+    <!-- Keep all page content within the page-content inset div! -->
+    <div class="page-content inset">
+      <%= yield %>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript for the Menu Toggle -->
+  <script>
+
+    window.onload = function() {
+
+  var mySwiper = new Swiper('.swiper-container',{
+    slidesPerView: 'auto'
+  })
+
+    }
+
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    $('body').on('hidden.bs.modal', '.modal', function () {
+      $(this).removeData('bs.modal');
+    });
+    $('body').on('hidden.bs.modal', '#confirm-delete', function () {
+      $(this).remove();
+    });
+  </script>
 </body>
 </html>
