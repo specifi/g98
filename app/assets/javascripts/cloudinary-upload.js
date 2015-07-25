@@ -11,9 +11,9 @@ $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
 $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
   $('.progress').removeClass('hidden')
   percent =  Math.round((data.loaded * 100.0) / data.total) + '%'
-  if(percent == "100%"){
-    $('.progress').addClass('hidden')
-  }
+  // if(percent == "100%"){
+  //   $('.progress').addClass('hidden')
+  // }
   $('.progress-bar').css('width', percent);
   $('.progress-bar').text(percent);
 });
