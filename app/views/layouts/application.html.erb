@@ -20,9 +20,12 @@
         <li><%= link_to content_tag(:i, ' Fresh', class: "fa fa-female") %></li>
 
         <% if user_signed_in? %>
+          <li><%= link_to content_tag(:i, ' Account', class: "fa fa-user"), profile_path %></li>
           <li><%= link_to content_tag(:i, ' My posts', class: "fa fa-bars"), posts_path %></li>
-          <li><%= link_to content_tag(:i, ' Upload', class: "fa fa-camera") %></li>
+          <li><%= link_to content_tag(:i, ' Upload', class: "fa fa-camera"), new_post_path %></li>
           <li><%= link_to content_tag(:i, ' Logout', class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to content_tag(:i, ' Login', class: "fa fa-sign-in"), login_path %></li>
         <% end %>
       </ul>
     </div>

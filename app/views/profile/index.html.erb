@@ -1,0 +1,34 @@
+<script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>
+<%= form_for @user, url: update_profile_path, html: { :method => :put }  do |f| %>
+  <div class="form-group">
+    <label>First Name</label>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Profile Image URL</label>
+    <%= f.text_field :profile_image_url, class: "form-control" %>
+
+    <input type="filepicker" data-fp-apikey="ATz5bfnaKTTiwj5mTyBa1z"
+      data-fp-button-text=" Upload Image"
+      data-fp-button-class="fa fa-camera btn btn-g98"
+      container="modal"
+      onchange="update_url_field(event.fpfile.url)">
+  </div>
+
+  <%= f.submit "Update", class: "btn btn-default" %>
+<% end  %>
+
+<script type="text/javascript">
+  function update_url_field(url){
+    $("#user_profile_image_url").val(url)
+  }
+</script>

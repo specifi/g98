@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get "profile" => "profile#index"
+  put "profile" => "profile#update", as: "update_profile"
 
   authenticated :user do
     root to: "profile#index", as: :authenticated_root
