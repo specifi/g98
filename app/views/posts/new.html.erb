@@ -1,5 +1,3 @@
-<script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>
-
 <%= form_for @post do |f| %>
   <div class="form-group">
     <label for="exampleInputEmail1">Title</label>
@@ -10,21 +8,21 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Image URL</label>
+    <label>Upload Image</label>
     <%= f.text_field :url, class: "form-control" %>
-
-    <input type="filepicker" data-fp-apikey="ATz5bfnaKTTiwj5mTyBa1z"
-      data-fp-button-text=" Upload Image"
-      data-fp-button-class="fa fa-camera btn btn-g98"
-      container="modal"
-      onchange="update_url_field(event.fpfile.url)">
+    <% if @unsigned %>
+      <%= f.cl_unsigned_image_upload(:image, @preset_name) %>
+    <% else %>
+      <%= f.cl_image_upload(:image, :return_delete_token=>true) %>
+    <% end %>
+    <div class="preview"></div>
+    <div class="progress hidden">
+      <div class="progress-bar" role="progressbar" aria-valuemax="100" style="width: 0%;"></div>
+    </div>
   </div>
 
   <%= f.submit "Create Post", class: "btn btn-default" %>
 <% end  %>
 
-<script type="text/javascript">
-  function update_url_field(url){
-    $("#post_url").val(url)
-  }
-</script>
+<%= cloudinary_js_config %>
+<%= javascript_include_tag 'cloudinary-upload', 'data-turbolinks-track' => true %>

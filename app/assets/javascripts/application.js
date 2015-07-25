@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require swiper
+//= require cloudinary
 //= require_tree .

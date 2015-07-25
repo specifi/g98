@@ -1,0 +1,18 @@
+development:
+  cloud_name: ha0rjfqim
+  api_key: '514384534737669'
+  api_secret: eNF-ESwaX_yY4VJtRvbX1zEwry4
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ha0rjfqim
+  api_key: '514384534737669'
+  api_secret: eNF-ESwaX_yY4VJtRvbX1zEwry4
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ha0rjfqim
+  api_key: '514384534737669'
+  api_secret: eNF-ESwaX_yY4VJtRvbX1zEwry4
+  enhance_image_tag: true
+  static_image_support: false
