@@ -1,24 +1,7 @@
 <div class="row">
   <div class="post col-xs-12 col-md-10">
-    <div class="post col-xs-1 col-md-1">
-      <%= image_tag("https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/10427676_10202609264147375_5617878632731747928_n.jpg?oh=09decb14d7fc91c12959603bae31a7e9&oe=564F31A6&__gda__=1447539887_bfcb55704fb3ac96d622ca58ac02acd5", class: "profile-image") %>
-    </div>
-    <div class="post col-md-11">
-      <%= image_tag("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xtf1/v/t34.0-12/11793237_10203673726838277_1062913434_n.jpg?oh=c26d3e4026c8ca7a0fa59102be09e448&oe=55B4F9A1&__gda__=1437925821_d7d6fe467030a4c3d09a3615d18a1611", class: "post-image") %>
-    </div>
-
-    <div class="post col-xs-1 col-md-1">
-      <%= image_tag("https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/10427676_10202609264147375_5617878632731747928_n.jpg?oh=09decb14d7fc91c12959603bae31a7e9&oe=564F31A6&__gda__=1447539887_bfcb55704fb3ac96d622ca58ac02acd5", class: "profile-image") %>
-    </div>
-    <div class="post col-md-11">
-      <%= image_tag("https://scontent-sin1-1.xx.fbcdn.net/hphotos-xft1/v/t34.0-12/11780557_10203673724198211_9672473_n.jpg?oh=2da332d8d92bdd9f1ca965cf9621386a&oe=55B616CA", class: "post-image") %>
-    </div>
-
-    <div class="post col-xs-1 col-md-1">
-      <%= image_tag("https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xta1/v/t1.0-9/11709612_777709449008862_315229151283328871_n.jpg?oh=c3fbd17c1c3cad3eb3d548aab88306ad&oe=56173BD5&__gda__=1447242219_e77e8e23cb2691ca67c8ee8838fce97d", class: "profile-image") %>
-    </div>
-    <div class="post col-md-11">
-      <%= image_tag("https://scontent-sin1-1.xx.fbcdn.net/hphotos-xpt1/v/t34.0-12/11793386_1680812175390615_2021120970_n.jpg?oh=c0581407141b912c3efc0d493724cabe&oe=55B5F782", class: "post-image") %>
-    </div>
+    <% @posts.each do |post|  %>
+      <%= render partial: "post", locals: { post: post } %>
+    <% end %>
 	</div>
 </div>
