@@ -18,9 +18,12 @@
         <li><%= link_to content_tag(:i, ' Hot', class: "fa fa-fire"), authenticated_root_path, class: is_active?("dashboard") %></li>
         <li><%= link_to content_tag(:i, ' Trending', class: "fa fa-star") %></li>
         <li><%= link_to content_tag(:i, ' Fresh', class: "fa fa-female") %></li>
-        <li><%= link_to content_tag(:i, ' Upload', class: "fa fa-camera") %></li>
-        <li><%= link_to content_tag(:i, ' Logout', class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
 
+        <% if user_signed_in? %>
+          <li><%= link_to content_tag(:i, ' My posts', class: "fa fa-bars"), posts_path %></li>
+          <li><%= link_to content_tag(:i, ' Upload', class: "fa fa-camera") %></li>
+          <li><%= link_to content_tag(:i, ' Logout', class: "fa fa-sign-out"), destroy_user_session_path, method: :delete %></li>
+        <% end %>
       </ul>
     </div>
 
