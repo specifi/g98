@@ -10,11 +10,8 @@
   <div class="form-group">
     <label>Upload Image</label>
     <%= f.text_field :url, class: "form-control" %>
-    <% if @unsigned %>
-      <%= f.cl_unsigned_image_upload(:image, @preset_name) %>
-    <% else %>
-      <%= f.cl_image_upload(:image, :return_delete_token=>true) %>
-    <% end %>
+    <%= f.cl_image_upload(:image, :return_delete_token=>true) %>
+
     <div class="preview"></div>
     <div class="progress hidden">
       <div class="progress-bar" role="progressbar" aria-valuemax="100" style="width: 0%;"></div>

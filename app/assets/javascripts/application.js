@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require swiper
 //= require cloudinary
+//= require cloudinary-upload
+//= require turbolinks
 //= require_tree .
