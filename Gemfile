@@ -16,6 +16,8 @@ gem 'font-awesome-rails'
 gem 'turbolinks'
 gem 'cloudinary'
 gem 'jquery-turbolinks'
+gem 'jquery-infinite-pages'
+gem 'kaminari'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production

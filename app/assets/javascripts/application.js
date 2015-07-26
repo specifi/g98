@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require jquery.infinite-pages
 //= require jquery_ujs
 //= require bootstrap
 //= require swiper
