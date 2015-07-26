@@ -1,4 +1,5 @@
 $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+  $('.progress').addClass('hidden')
   $('.preview').html(
     $.cloudinary.image(data.result.public_id,
       { format: data.result.format, version: data.result.version,
@@ -17,3 +18,7 @@ $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
   $('.progress-bar').css('width', percent);
   $('.progress-bar').text(percent);
 });
+$('.cloudinary-fileupload').bind('fileuploadsend', function(e, data) {
+  $('.progress').removeClass('hidden')
+  $('.progress-bar').text("Uploading...");
+})
