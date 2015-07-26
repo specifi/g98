@@ -10,12 +10,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#account" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+      <a class="navbar-brand logo" href="/">
+        <%= image_tag "g98-logo"%>
+      </a>
+    </div>
+  </div>
+</nav>
   <div id="wrapper">
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li><a href="#" class="text-center logo"><%= image_tag "g98-logo"%></a></li>
-        <li></br></li>
         <li><%= link_to content_tag(:i, ' Hot', class: "fa fa-fire"), authenticated_root_path, class: is_active?("dashboard") %></li>
         <li><%= link_to content_tag(:i, ' Trending', class: "fa fa-star") %></li>
         <li><%= link_to content_tag(:i, ' Fresh', class: "fa fa-female") %></li>

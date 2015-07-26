@@ -1,3 +1,7 @@
+body {
+  padding-top: 50px;
+}
+
 #wrapper {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
@@ -98,10 +102,12 @@
   padding: 20px;
 }
 
-.logo img {
-  height: 32px;
+.logo {
+  padding: 10px 15px;
+  img {
+    height: 32px;
+  }
 }
-
 
 @media (max-width:767px) {
   #wrapper {
