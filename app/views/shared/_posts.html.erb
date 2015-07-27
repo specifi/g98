@@ -1,23 +1,27 @@
 <div class="posts">
   <% @posts.each do |post|  %>
-    <div class="row">
-      <div class="post col-xs-12 col-md-1">
-        <div class="col-xs-2">
-          <%= image_tag(post.user.profile_image_url.presence || "default-profile", class: "profile-image") %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-2 col-md-1">
+              <%= image_tag(post.user.profile_image_url.presence || "default-profile", class: "profile-image") %>
+            </div>
+            <div class="col-xs-3">
+              <h6><%= post.user.username %></h6>
+            </div>
+            <div class="col-xs-7">
+              <h6 class="fa fa-clock-o pull-right"><small> &nbsp;<%= time_ago_in_words(post.created_at) %> ago</small></h6>
+            </div>
+          </div>
         </div>
-        <div class="col-xs-10">
-          <h6><%= post.user.username %></h6>
-        </div>
-      </div>
-      <div class="post col-xs-12 col-md-8">
-        <div class="row">
+        <div class="panel-body">
           <%= image_tag(post.url, class: "post-image") %>
         </div>
-        <div class="row post-details">
-          <em class="fa fa-heart"> Likes</em>
-          <em class="fa fa-clock-o pull-right">&nbsp;<%= time_ago_in_words(post.created_at) %></em>
+        <div class="panel-footer">
+          <div class="row post-details">
+            <em class="fa fa-heart"> 10 Likes</em>
+          </div>
         </div>
       </div>
-    </div>
   <% end %>
 </div>

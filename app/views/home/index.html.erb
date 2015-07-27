@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="post col-xs-12 col-md-10 infinite-table">
+  <div class="post col-xs-12 col-md-8 infinite-table">
     <%= render :partial => 'shared/posts', :object => @posts %>
     <div class="row pagination">
       <%= link_to_next_page(@posts, 'Next Page', :remote => true) %>
